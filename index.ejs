@@ -1,0 +1,52 @@
+<% layout("/layouts/boilerplate") %>
+
+    <h3>All Listings</h3>
+      
+      
+      <!--<div class="container">
+        <div class="row">
+          <% for(let listing of allListings) { %>
+            <a href="/listings/<%= listing._id %>" style="text-decoration: none; color: inherit; display: block;">
+
+            <div class="col-md-4">
+            
+              <div class="card">
+                <img src="<%= listing.image.url %>" class="card-img-top" alt="<%= listing.image.filename %>" style="height: 300px; object-fit: cover;">
+                <div class="card-body">
+                  <p class="card-text">
+                    <b><%= listing.title %></b><br>
+                    ₹<%= listing.price.toLocaleString("en-IN") %>
+                  </p>
+                </div>
+              </div>
+           </div>
+        </a>
+          <% } %>
+        </div>
+      </div>-->
+      <div class="container-fluid">
+        <div class="row" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr)); gap: 20px;">
+          <% for(let listing of allListings) { %>
+            <!-- Anchor tag wrapping the entire card -->
+            <a href="/listings/<%= listing._id %>" style="text-decoration: none; color: inherit; display: block;">
+              <div class="card">
+                <img src="<%= listing.image.url %>" class="card-img-top" alt="<%= listing.image.filename %>" style="height: 300px; object-fit: cover;">
+                <div class = "card-img-overlay"></div>
+               <div class="card-body">
+                  <p class="card-text">
+                    <%= listing.title %> <br>
+                    ₹<%= listing.price.toLocaleString("en-IN") %>
+                  </p>
+                </div>
+              </div>
+            </a>
+          <% } %>
+        </div>
+      </div>
+      
+       
+
+
+
+
+
